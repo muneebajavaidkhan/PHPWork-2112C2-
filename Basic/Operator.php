@@ -26,7 +26,7 @@ $y = 30;
 $z = 100;
 
 echo "Actual x value is $x and Acutal y value is $y <br>";
-
+ 
 echo 'Equal operator ' . $z . '<br>';
 
 echo "$x += $y is " . ($x += $y) . '<br>'; //$x = $x + $y; OR $x += $y //40 = 10 + 30
