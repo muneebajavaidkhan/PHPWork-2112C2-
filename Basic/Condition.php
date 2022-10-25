@@ -22,8 +22,9 @@
    $perimeter = $side * 4.0;
    $area = $side * $perimeter;
 
-   if ($side > 15 && $perimeter < 1000) { //28.46 > 15 && 113.84 //true && true = true
-      
+   if ($side > 15 && $perimeter < 1000) {
+       //28.46 > 15 && 113.84 //true && true = true
+
        $sideValue = $side;
        $perimeterValue = $perimeter;
        $AreaValue = $area;
@@ -50,5 +51,43 @@
    </table>
 
 
+   <h3>SWITCH CASE</h3>
+    <?php
+    $message = ' ';
+    $role = 'admin';
+
+    switch ($role) {
+        case 'admin':
+            $message = 'Welcome Admin';
+            break;
+        case 'editor':
+        case 'author':
+            $message = 'Welcome! Do you want  to create a new Article';
+            break;
+        case 'subscriber':
+            $message = 'Welcome! Checkout Some new Article';
+            break;
+        default:
+            $message = 'You are not authorized to accesss this page';
+    }
+    ?>
+
+
+<form>
+    <label for="">Message</label>
+    <input type="text" value = "<?= $message ?>" id = "msg" name = "message">
+
+
+    <input type="submit" value = "Submit"  id = "btn" onclick = "ClickEvent()">
+</form>
+
+
+<script>
+
+    function ClickEvent(){
+        var GetData =  document.getElementById('msg').value;
+        alert('Successfully!!' +GetData)
+    }
+</script>
 </body>
 </html>
