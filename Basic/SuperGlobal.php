@@ -55,5 +55,53 @@
         </tr>
 </table>
 
+
+<h3>GLOBAL VARIABLE</h3>
+<?php
+$x = 75;
+$y = 25; //global variable
+
+function addition()
+{
+    $z = 9; //local Variable
+
+    $GLOBALS['c'] = $GLOBALS['x'] + $GLOBALS['y'];
+}
+addition();
+echo $c . '<br>';
+echo $z; //undefine variable;
+echo $x;
+?>
+
+  <h3>SERVER VARIABLE</h3>
+
+  <?php
+  echo $_SERVER['SERVER_NAME'] . '<br>';
+  echo $_SERVER['HTTP_HOST'] . '<br>';
+  echo $_SERVER['SCRIPT_NAME'];
+  ?>
+
+<h3>GET Variable</h3>
+<div class="container">
+  <h2>Stacked form</h2>
+  <form action="ex.php" method = "get">
+    <div class="form-group">
+      <label for="email">Email:</label> 
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary" name = "btn">Submit</button>
+  </form>
+</div>
+
+ 
 </body>
 </html>
