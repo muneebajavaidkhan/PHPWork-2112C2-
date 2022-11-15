@@ -17,9 +17,9 @@
     $res = mysqli_query($con, $query); //true //false
 
     if ($res) {
-        echo "<script>alert('Data Inserted!! ');window.location.href = 'index.php';</script>";
+        echo "<script>alert('Data Inserted!! ');window.location.href = 'ViewData.php';</script>";
     } else {
-        echo "<script>alert('Data not  Inserted!! ');window.location.href = 'index.php';</script>";
+        echo "<script>alert('Data not  Inserted!! ');window.location.href = 'ViewData.php';</script>";
     }
 } ?>
 
