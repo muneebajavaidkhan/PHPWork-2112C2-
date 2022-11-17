@@ -10,7 +10,7 @@
 
     <h1>SINGLE DIMENSIONAL INDEXED ARRAY</h1>
     <?php
-    $color = ['orange', 'blue', 'Pink', 'Black'];
+    $color = ['orange', 'blue', 'Pink', 'Black']; //0//1/
 
     // echo $color[3];
     echo '<pre>';
@@ -35,7 +35,8 @@
     // echo '</pre>';
 
     foreach ($Stud as $key => $Val) {
-        //Abc//15//'Matric'
+        //abc b//15//matric
+
         echo "Stud[$key] => $Val <br>";
     }
     ?>
@@ -55,11 +56,11 @@ $Studs = [
 
 echo $Studs[0][2];
 for ($row = 0; $row <= 2; $row++) {
-    //1<3
+    //0<=2 = yes
     echo '<ul>';
-    for ($col = 0; $col <= 2; $col++) {
+    for ($col = 0; $col <= 2; $col++) { //1<=2
         //3<3
-        echo '<li>' . $Studs[$row][$col] . '</li>'; //$Stud[0][2] = Abc //Inter//17
+        echo '<li>' . $Studs[$row][$col] . '</li>'; //$Stud[0][0] = Abc //Inter//17
     }
     echo '</ul>';
 }

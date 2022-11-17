@@ -11,7 +11,7 @@
     $Fees = $_POST['fee'];
     $Courses = $_POST['Course'];
 
-    $cor = implode(',', $Courses);
+    $cor = implode(',', $Courses); //array to string
 
     $query = "insert into student (StduentName,Education,Fess,Gender,City,Courses) values ('$Name','$Educ','$Fees', '$gender', '$City','$cor')";
     $res = mysqli_query($con, $query); //true //false
