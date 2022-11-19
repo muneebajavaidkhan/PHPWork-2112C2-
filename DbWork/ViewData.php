@@ -27,7 +27,8 @@ $rowCount = mysqli_num_rows($res);
                 
 </form>
 
-<?php if ($rowCount > 0) { ?>
+<?php
+if ($rowCount > 0) { ?>
 <table class = "container table table-bordered mt-5">
             <tr>
                 <th>StudentId</th>
@@ -50,10 +51,23 @@ $rowCount = mysqli_num_rows($res);
                     <td> <?= $data['Gender'] ?></td>
                     <td> <?= $data['City'] ?></td>
                     <td> <?= $data['Courses'] ?></td>   
-                    <td> <a href="Edit.php?id=<?= $data['StdId'] ?>" class = "btn btn-primary">Edit</a> </td> 
-                    <td> <a href=""  class = "btn btn-danger">Delete</a> </td>             
+                    <td> <a href="Edit.php?id=<?= $data[
+                        'StdId'
+                    ] ?>" class = "btn btn-primary">Edit</a> </td> 
+                    <td> <a href="ViewData.php?Delid=<?= $data[
+                        'StdId'
+                    ] ?>"  class = "btn btn-danger"  onclick = "return confirm('Are you sure you want to delete!!');return false;">Delete</a> </td>             
                 <?php echo '</tr>';
             } ?>
 
     </table>
-<?php } else {echo 'No Record founds';} ?>
+<?php } else {echo 'No Record founds';}
+error_reporting(0);
+$delId = $_GET['Delid'];
+$querys = "delete from student where StdId = $delId";
+$res = mysqli_query($con, $querys);
+if ($res) {
+    echo "<script>alert('Data Deleted!!');window.location.href = 'ViewData.php';</script>";
+}
+mysqli_close($con);
+ ?>

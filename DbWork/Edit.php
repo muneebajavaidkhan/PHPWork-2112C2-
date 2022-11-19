@@ -18,6 +18,10 @@ $checkbox = explode(',', $checkEdit);
 
   <form action="Crud.php" method = "post">
 
+
+
+
+<input type="hidden" value = "<?= $res['StdId'] ?>" name = "StdID"> 
     <div class="form-group">
       <label for="name">StudentName:</label>
       <input type="text" class="form-control" id="name" placeholder="Enter Your name" name="name" value = "<?= $res[
